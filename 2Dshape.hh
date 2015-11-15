@@ -1,6 +1,7 @@
 #ifndef 2DSHAPE_HH_
 #define 2DSHAPE_HH_
 #include <iostream>
+#include “basic.h”
 
 class 2Dshape {
 public:
