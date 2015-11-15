@@ -17,6 +17,6 @@ private:
 	void intersection();
 	void union();
 	void roatate(int angle);
-	void translate();
+	void translate(double x, double y, double z);
 	void scale(int times);
 }
