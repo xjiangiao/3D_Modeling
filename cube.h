@@ -15,6 +15,6 @@ private:
 	double volume() const;
 	double area() const;
 	void roatate(int angle);
-	void translate();
+	void translate(double x, double y, double z);
 	void scale(int times);
 }
