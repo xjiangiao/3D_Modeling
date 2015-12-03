@@ -13,6 +13,7 @@ void Rectangle::draw() const{
     fout << "           vertex " << x1 << " " << y1 << " " << z1 << '\n';
     fout << "           vertex " << x2 << " " << y2 << " " << z2 << '\n';
     fout << "           vertex " << x3 << " " << y3 << " " << z3 << '\n';
+    fout << "           vertex " << x4 << " " << y4 << " " << z4 << '\n';
     fout << "       endloop" << '\n';
     fout << "   endfacet" << '\n';
     fout << "endsolid OpenSCAD_Model" << '\n';
