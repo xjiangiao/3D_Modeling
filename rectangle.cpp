@@ -5,7 +5,7 @@
 #include "rectangle.hh"
 using namespace std;
 
-void Rectangle::Draw() const{
+void Rectangle::draw() const{
     ofstream fout("rectangle.stl");
     fout << "solid OpenSCAD_Model" << '\n';
     fout << "   facet normal 0 0 0" << '\n';
