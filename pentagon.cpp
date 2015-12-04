@@ -5,6 +5,7 @@
 #include "pentagon.hh"
 using namespace std;
 
+//following function outputs stl file to draw a pentagon
 void Pentagon::draw() const{
 	ofstream fout("pentagon.stl");
 	fout << "solid OpenSCAD_Model" << '\n';
