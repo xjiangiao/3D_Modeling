@@ -5,6 +5,7 @@
 #include "rectangle.hh"
 using namespace std;
 
+//following function outputs stl file to draw a rectangle
 void Rectangle::draw() const{
     ofstream fout("rectangle.stl");
     fout << "solid OpenSCAD_Model" << '\n';
