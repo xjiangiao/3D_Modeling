@@ -12,8 +12,9 @@ public:
 	double area() const;
 	double perimeter() const;
 	void draw() const;	//draw a circle in a 2D coordinate system
-	void moveleft(int n);	//move the rectangle n units to the right
-	void moveright(int n);	//move rectangle n unite to the left
+	void rotate(double degree, Triangle& orig);
+//	void moveleft(int n);	//move the rectangle n units to the right
+//	void moveright(int n);	//move rectangle n unite to the left
 };
 
 #endif
