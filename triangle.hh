@@ -13,6 +13,7 @@ public:
     double area() const;
     double perimeter() const;
 	void draw() const;	//draw a triangle in a 2D coordinate system
+	void rotate(double degree, Triangle& orig);
 	void moveleft(int n);	//move the triangle n units to the right
 	void moveright(int n);	//move triangle n unite to the left
 };
