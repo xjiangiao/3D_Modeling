@@ -66,6 +66,6 @@ double Circle:: area() const {
 int main() {
 	Circle a(10, 10, 10, 100);
 	a.draw();
-	cout << a.area();
+	cout <<"The area of this Circle is "<< a.area();
 	return 0;
 }
