@@ -161,13 +161,26 @@ void cube::rotate(double angle, char axle, cube& orig) {
 double cube::volume() const {
 	return w*h*l;
 }
+compute the area
 double cube::area() const {
 	return w*l*2+w*h*2+h*l*2;
+}
+//zoom the cube
+void cube::zoom(double times, cube& orig) {
+	for (int i = 1; i < 8; i++) {
+		orig.x[i] = times * orig.x[i];
+		orig.y[i] = times * orig.y[i];
+		orig.z[i] = times * orig.z[i];
+	}
+	orig.w = times*w;
+	orig.l = times*l;
+	orig.h = times*h;
 }
 int main() {
 	cube a(0, 0, 0, 10, 10, 10);
 //	a.draw();
 	a.rotate(45, 'x', a);
+	a.zoom(5, a);
 	a.draw();
 	cout << "The Volume of this cube is " << a.volume() << endl;
 	cout << "The suface area of this cube is " << a.area() << endl;
