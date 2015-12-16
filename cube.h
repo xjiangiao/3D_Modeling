@@ -15,7 +15,7 @@ public:
 	double volume() const;
 	double area() const;
 	void rotate(double angle, char axle, cube& orig);
-	void translate(double x, double y, double z);
-	void scale(int times);
+//	void translate(double x, double y, double z);
+	void zoom(double times, cube& org);
 };
 #endif
