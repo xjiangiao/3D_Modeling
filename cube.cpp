@@ -57,10 +57,10 @@ cube& cube::operator=(const cube& orig) {
 	}
 	return *this;
 }
-cube::cube(cube &&orig) : x0(x0), y0(y0), z0(z0), w(w), l(l), h(h) {
-	x = nullptr;
-	y = nullptr;
-	z = nullptr;
+cube::cube(cube &&orig) : x0(orig.x0), y0(orig.y0), z0(orig.z0), w(orig.w), l(orig.l), h(orig.h) {
+	orig.x = nullptr;
+	orig.y = nullptr;
+	orig.z = nullptr;
 }
 //draw cube
 void cube::draw() const {
@@ -158,15 +158,12 @@ void cube::rotate(double angle, char axle, cube& orig) {
 		}
 	}
 }
-//compute and output the volume
 double cube::volume() const {
 	return w*h*l;
 }
-//compute and output the area
 double cube::area() const {
 	return w*l*2+w*h*2+h*l*2;
 }
-//zoom the cube
 void cube::zoom(double times, cube& orig) {
 	for (int i = 1; i < 8; i++) {
 		orig.x[i] = times * orig.x[i];
@@ -185,6 +182,6 @@ int main() {
 	a.draw();
 	cout << "The Volume of this cube is " << a.volume() << endl;
 	cout << "The suface area of this cube is " << a.area() << endl;
-	system("pause");
+//	system("pause");
 	return 0;
 }
