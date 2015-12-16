@@ -5,15 +5,19 @@
 
 class Circle {
 private:
-   double x0,y0,z0, r;
-
+	double x0, y0, z0, r, size;
+	double* x,* y,* z;
 public:
-	Circle(double x0, double y0, double z0, double r) : x0(x0), y0(y0), z0(z0), r(r) {};
+	Circle(double x0, double y0, double z0, double r);
+	Circle(const Circle& orig);
+	Circle& operator =(const Circle& orig);
+	~Circle();
+	Circle(Circle&& orig);
    double area() const;
    double perimeter() const;
    void draw() const ; // draw a circle in the 2D coordinate.
-   void moveleft(int n) ;     // move the model n units to the left.
-   void moveright(int n) ;     // move the model n units to the right.
+   void zoom(double times, Circle& orig);
+   void move(double n, char direction, Circle& orig);     // move the model n units to the right.
 };
 
 #endif
