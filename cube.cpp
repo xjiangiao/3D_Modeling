@@ -158,10 +158,11 @@ void cube::rotate(double angle, char axle, cube& orig) {
 		}
 	}
 }
+//compute and output the volume
 double cube::volume() const {
 	return w*h*l;
 }
-compute the area
+//compute and output the area
 double cube::area() const {
 	return w*l*2+w*h*2+h*l*2;
 }
