@@ -1,20 +1,21 @@
-#idndef CUBE_H
-#DEFINE CUBE_H
+#ifndef CUBE_H_
+#define CUBE_H_
 #include <iostream>
-#inlcude "Shape3D.h"
-
-class cube : public Shape3D{
+class cube{
 private:
-	double x,y,z;
-private:
-	cube();
+	double x0,y0,z0,w,l,h;
+	double* x, * y, * z;
+public:
+	cube(double x0, double y0, double z0, double w, double l, double h);
 	cube(const cube& orig);
+	cube& operator =(const cube& orig);
 	~cube();
-	cube& operator= (const cube& orig);
-	cube& operator= (const cube&& orig);
+	cube(cube&& orig);
+	void draw() const;
 	double volume() const;
 	double area() const;
-	void roatate(int angle);
+	void rotate(double angle, char axle, cube& orig);
 	void translate(double x, double y, double z);
 	void scale(int times);
-}
+};
+#endif
