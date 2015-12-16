@@ -73,13 +73,13 @@ void Rectangle::move(double n, char direction, Rectangle& orig) {
 			orig.x3 += n;
 			orig.x4 += n;
 		}
-		else if (direction == 'up') {
+		else if (direction == 'U') {
 			orig.y1 += n;
 			orig.y2 += n;
 			orig.y3 += n;
 			orig.y4 += n;
 		}
-		else if (direction == 'down') {
+		else if (direction == 'D') {
 			orig.y1 -= n;
 			orig.y2 -= n;
 			orig.y3 -= n;
@@ -88,9 +88,11 @@ void Rectangle::move(double n, char direction, Rectangle& orig) {
 }
 //zoom this rectangle
 void Rectangle::zoom(double times, Rectangle& orig) {
+	orig.x1 = times*orig.x1;
 	orig.x2 = times*orig.x2;
 	orig.x3 = times*orig.x3;
 	orig.x4 = times*orig.x4;
+	orig.y1 = times*orig.y1;
 	orig.y2 = times*orig.y2;
 	orig.y3 = times*orig.y3;
 	orig.y4 = times*orig.y4;
@@ -104,6 +106,6 @@ int main() {
 	b.draw();
 	cout << "The perimeter of this rectangle is " << a.perimeter() << endl;
 	cout << "The suface area of this rectangle is " << a.area() << endl;
-	system("pause");
+//	system("pause");
 	return 0;
 }
