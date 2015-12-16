@@ -119,13 +119,7 @@ double Tetrahedron::area() const {
 	double ytmp = abs(y1 - y2);
 	return xtmp*ytmp;
 }
-//Calculate the perimeter of this rectangle
-double Tetrahedron::perimeter() const {
-	double xtmp = abs(x1 - x2);
-	double ytmp = abs(y1 - y2);
-	return 2 * (xtmp + ytmp);
-}
-//zoom this rectangle
+//zoom this Tetrahedron
 void Tetrahedron::zoom(double times, Tetrahedron& orig) {
 	orig.x1 = times*orig.x1;
 	orig.x2 = times*orig.x2;
