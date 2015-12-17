@@ -1,9 +1,9 @@
 #ifndef CONE_HH_
 #define CONE_HH_
-//#include "2Dshape.hh"
+#include "Shape3D.h"
 #include <iostream>
 
-class Cone {
+class Cone : public shape3D{
 private:
 	double x0, y0, z0, r, size, h;
 	double* x, *y, *z;
