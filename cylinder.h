@@ -1,7 +1,8 @@
 #ifndef CYLINDER_H
 #define CYLINDER_H
+#include "Shape3D.h"
 #include <iostream>
-class cylinder{
+class cylinder:public shape3D{
 private:
 	double x0,y0,z0,r,h;
 	int size;
