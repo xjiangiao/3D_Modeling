@@ -1,10 +1,8 @@
 #ifndef TRIANGLE_HH_
 #define TRIANGLE_HH_
-///#include "2Dshape.hh"
+#include "Shape2D.h"
 #include <iostream>
-
-
-class Triangle{
+class Triangle :public shape2D{
 private:
     double x1, x2, x3, y1, y2, y3, z1, z2, z3;
 public:
