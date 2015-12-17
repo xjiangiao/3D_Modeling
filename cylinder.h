@@ -1,22 +1,24 @@
-#idndef CYLINDER_H
-#DEFINE CYLINDER_H
+#ifndef CYLINDER_H
+#define CYLINDER_H
 #include <iostream>
-#inlcude "Shape3D.h"
-
-class cylinder : public Shape3D{
+class cylinder{
 private:
-	double x,y,r,h;
-private:
-	cylinder();
+	double x0,y0,z0,r,h;
+	int size;
+	double *x, *y, *z, *o, *p, *q;
+public:
+	cylinder(double x0,double y0,double z0,double r, double h);
 	cylinder(const cylinder& orig);
 	~cylinder();
 	cylinder& operator= (const cylinder& orig);
-	cylinder& operator= (const cylinder&& orig);
+	cylinder(cylinder &&orig);
+	void draw() const;
 	double volume() const;
 	double area() const;
-	void intersection();
-	void union();
-	void roatate(int angle);
-	void translate(double x, double y, double z);
+//	void intersection();
+//	void union();
+//	void roatate(int angle);
+	void translate();
 	void scale(int times);
-}
+};
+#endif
