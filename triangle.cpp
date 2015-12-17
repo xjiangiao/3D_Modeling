@@ -56,7 +56,7 @@ void Triangle::move(double n, char direction, Triangle& orig){
         orig.y3 -= n;
     }
 }
-void Triangle::zoom(double times, Rectangle& orig){
+void Triangle::zoom(double times, Triangle& orig){
     orig.x1 *= times;
     orig.x2 *= times;
     orig.x3 *= times;
