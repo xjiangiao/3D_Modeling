@@ -9,14 +9,14 @@ using namespace std;
 void Rectangle::draw() const {
 	ofstream fout("rectangle.stl");
 	fout << "solid OpenSCAD_Model" << endl;
-	fout << "  facet normal -0 0 1" << endl;
+	fout << "  facet normal 0 0 0" << endl;
 	fout << "    outer loop" << endl;
 	fout << "      vertex " << x1 << " " << y1 << " " << z1 << endl;
 	fout << "      vertex " << x2 << " " << y2 << " " << z2 << endl;
 	fout << "      vertex " << x3 << " " << y3 << " " << z3 << endl;
 	fout << "    endloop" << endl;
 	fout << "  endfacet" << endl;
-	fout << "  facet normal 0 0 1" << endl;
+	fout << "  facet normal 0 0 0" << endl;
 	fout << "    outer loop" << endl;
 	fout << "      vertex " << x3 << " " << y3 << " " << z3 << endl;
 	fout << "      vertex " << x4 << " " << y4 << " " << z4 << endl;
@@ -49,14 +49,14 @@ void Rectangle::rotate(double degree, Rectangle& orig) {
 }
 //Calculate the area of this rectangle
 double Rectangle::area() const {
-	double xtmp = abs(x1 - x2);
-	double ytmp = abs(y1 - y2);
+	double xtmp = sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
+	double ytmp = sqrt((x4 - x1)*(x4 - x1) + (y4 - y1)*(y4 - y1));
 	return xtmp*ytmp;
 }
 //Calculate the perimeter of this rectangle
 double Rectangle::perimeter() const {
-	double xtmp = abs(x1 - x2);
-	double ytmp = abs(y1 - y2);
+	double xtmp = sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
+	double ytmp = sqrt((x4 - x1)*(x4 - x1) + (y4 - y1)*(y4 - y1));
 	return 2*(xtmp+ytmp);
 }
 //Move the rectangle
@@ -97,8 +97,7 @@ void Rectangle::zoom(double times, Rectangle& orig) {
 	orig.y3 = times*orig.y3;
 	orig.y4 = times*orig.y4;
 }
-/*
-int main() {
+/*int main() {
 	Rectangle a(0, 20, 10, 10, 0, 10, 10, 20, 10, 0, 0, 10);
 	Rectangle b(0, 0, 10, 10, 0, 10, 10, 20, 10, 0, 20, 10);
 	a.zoom(2, a);
