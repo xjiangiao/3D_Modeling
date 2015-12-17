@@ -165,7 +165,7 @@ double cylinder::area() const {
 }
 double cylinder::volume() const {
 	return PI*r*r*h;
-}
+}/*
 int main() {
 	cylinder a(0, 0, 10, 10, 50);
 //	a.zoom(2, a);
@@ -174,4 +174,4 @@ int main() {
 	cout << "The volume of this cylinder is " << a.volume() << endl;
 	cout << "The suface area of this cylinder is " << a.area() << endl;
 	return 0;
-}
+}*/
