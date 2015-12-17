@@ -77,6 +77,7 @@ double Triangle::area() const{    //Use Heron's formula to calulate area
     double halfPerimeter =  0.5*(len1+len2+len3);
     return sqrt(halfPerimeter*(halfPerimeter-len1)*(halfPerimeter-len2)*(halfPerimeter-len3));  //Heron's formula
 }
+/*
 int main(){
 	Triangle a(0.0,0.0,0.0,10.0,0.0,0.0,0.0,10.0,0.0);
 	a.rotate(90,a);
@@ -88,3 +89,4 @@ int main(){
 	//system("pause");
 	return 0;
 }
+*/
