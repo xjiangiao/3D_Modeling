@@ -141,6 +141,11 @@ double Tetrahedron::area() const {
 	//final surface area
 	return area1 + area2 + area3 + area4;
 }
+double Tetrahedron::volume() const{
+    return ((x4-x1)*((y2-y1)*z(z3-z1)-(z2-z1)*(y3-y1))
+                    +(y4-y1)*((z2-z1)*(x3-x1)-(x2-x1)*(z3-z1))
+                    +(z4-z1)*((x2-x1)*(y3-y1)-(y2-y1)*(x3-x1))) / 6;
+}
 //zoom this Tetrahedron
 void Tetrahedron::zoom(double times, Tetrahedron& orig) {
 	orig.x1 = times*orig.x1;
