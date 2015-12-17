@@ -1,4 +1,5 @@
  #include<iostream>
+#include"Shape2D.h"
 #include"cube.h"
 #include"cone.h"
 #include"Circle.hh"
@@ -29,28 +30,30 @@ int main() {
 	cout << "The volume of this Cone is " << c.volume() << endl;
 	cout << "The suface area of this Cone is " << c.area() << endl;
 
-	Tetrahedron d(0, 20, 10, 10, 0, 10, 10, 20, 10, 10, 10, 20);
-	d.zoom(2, d);
+	Tetrahedron d(0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0, 10);
+//	d.zoom(2, d);
 	//	b.move(10, 'L', a);
-	d.rotate(45, 'x', d);
+	//d.rotate(45, 'x', d);
 	d.draw();
-	//cout << "The perimeter of this Tetrahedron is " << d.perimeter() << endl;
-//	cout << "The suface area of this Tetrahedron is " << d.area() << endl;
+    cout << "The volume of this Tetrahedron is " << d.volume() << endl;
+	cout << "The suface area of this Tetrahedron is " << d.area() << endl;
 
 	Rectangle e(0, 0, 10, 10, 0, 10, 10, 20, 10, 0, 20, 10);
-	e.zoom(2, e);
-	e.move(10, 'L', e);
-	e.rotate(45, e);
+//	e.zoom(2, e);
+//	e.move(10, 'L', e);
+//	e.rotate(45, e);
 	e.draw();
+	cout << "The perimeter of this Rectangle is " << e.perimeter() << endl;
+	cout << "The area of this Rectangle is " << e.area() << endl;
 
-	Triangle f(10, 0, 0, 30, 0, 0, 0, 20, 0);
-	f.rotate(90, f);
+	Triangle f(0, 0, 0, 50, 0, 0, 0, 30, 0);
+//	f.rotate(90, f);
 	f.draw();
-	cout << "The perimeter of this rectangle is " << e.perimeter() << endl;
-	cout << "The suface area of this rectangle is " << e.area() << endl;
+	cout << "The perimeter of this triangle is " << f.perimeter() << endl;
+	cout << "The area of this triangle is " << f.area() << endl;
 
 	cube g(0, 0, 0, 10, 10, 10);
-	//	a.draw();
+//	a.draw();
 	g.rotate(45, 'x', g);
 	g.zoom(5, g);
 	g.draw();
