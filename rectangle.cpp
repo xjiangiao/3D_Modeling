@@ -97,6 +97,7 @@ void Rectangle::zoom(double times, Rectangle& orig) {
 	orig.y3 = times*orig.y3;
 	orig.y4 = times*orig.y4;
 }
+/*
 int main() {
 	Rectangle a(0, 20, 10, 10, 0, 10, 10, 20, 10, 0, 0, 10);
 	Rectangle b(0, 0, 10, 10, 0, 10, 10, 20, 10, 0, 20, 10);
@@ -108,4 +109,4 @@ int main() {
 	cout << "The suface area of this rectangle is " << a.area() << endl;
 //	system("pause");
 	return 0;
-}
+}*/
