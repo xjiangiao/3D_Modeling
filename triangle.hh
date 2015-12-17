@@ -12,10 +12,10 @@ public:
         : x1(x1), x2(x2), x3(x3), y1(y1), y2(y2), y3(y3), z1(z1), z2(z2), z3(z3){}
     double area() const;
     double perimeter() const;
+    	void zoom(double times, Triangle& orig);	
 	void draw() const;	//draw a triangle in a 2D coordinate system
 	void rotate(double degree, Triangle& orig);
-	void moveleft(int n);	//move the triangle n units to the right
-	void moveright(int n);	//move triangle n unite to the left
+	void move(double n, char direction, Triangle& orig);	//move rectangle n units up, down, left, or right
 };
 
 #endif
