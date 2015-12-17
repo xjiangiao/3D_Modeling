@@ -1,9 +1,9 @@
 #ifndef Tetrahedron_HH_
 #define Tetrahedron_HH_
-//#include "2Dshape.hh"
+#include "Shape3D.h"
 #include <iostream>
 
-class Tetrahedron {
+class Tetrahedron : public shape3D{
 private:
 	double x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4;
 public:
