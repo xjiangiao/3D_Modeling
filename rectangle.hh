@@ -1,9 +1,9 @@
 #ifndef RECTANGLE_HH_
 #define RECTANGLE_HH_
-//#include "2Dshape.hh"
+#include "Shape2D.h"
 #include <iostream>
 
-class Rectangle {
+class Rectangle:public shape2D {
 private:
 	double x1, x2, x3, x4, y1, y2, y3, y4, z1, z2, z3, z4;
 public:
