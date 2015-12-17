@@ -134,6 +134,7 @@ void Tetrahedron::zoom(double times, Tetrahedron& orig) {
 	orig.z3 = times*orig.z3;
 	orig.z4 = times*orig.z4;
 }
+/*
 int main() {
 	Tetrahedron a(0, 20, 10, 10, 0, 10, 10, 20, 10, 10, 10, 20);
 
@@ -145,4 +146,4 @@ int main() {
 	cout << "The suface area of this rectangle is " << a.area() << endl;
 	//	system("pause");
 	return 0;
-}
+}*/
