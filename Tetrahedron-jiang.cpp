@@ -113,11 +113,33 @@ void Tetrahedron::rotate(double degree, char axle, Tetrahedron& orig) {
 		orig.y4 = y4tmp;
 	}
 }
-//Calculate the area of this rectangle
-double Tetrahedron::area() const {
-	double xtmp = abs(x1 - x2);
-	double ytmp = abs(y1 - y2);
-	return xtmp*ytmp;
+double Tetrahedron::area() const{
+    //face 1 area:
+    double len1 = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));    //use pythagorean theorem to find length of each side
+    double len2 = sqrt((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3));
+    double len3 = sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
+    double halfPerimeter1 =  0.5*(len1+len2+len3);
+    double area1 = sqrt(halfPerimeter1*(halfPerimeter1-len1)*(halfPerimeter1-len2)*(halfPerimeter1-len3));  //Heron's formula
+    //face 2
+    double len4 = sqrt((x2-x4)*(x2-x4)+(y2-y4)*(y2-y4));    //use pythagorean theorem to find length of each side
+    double len5 = sqrt((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3));
+    double len6 = sqrt((x3-x4)*(x3-x4)+(y3-y4)*(y3-y4));
+    double halfPerimeter2 =  0.5*(len4+len5+len6);
+    double area2 = sqrt(halfPerimeter2*(halfPerimeter2-len4)*(halfPerimeter2-len5)*(halfPerimeter2-len6));
+    //face 3
+    double len7 = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));    //use pythagorean theorem to find length of each side
+    double len8 = sqrt((x2-x4)*(x2-x4)+(y2-y4)*(y2-y4));
+    double len9 = sqrt((x4-x1)*(x4-x1)+(y4-y1)*(y4-y1));
+    double halfPerimeter3 =  0.5*(len7+len8+len9);
+    double area3 = sqrt(halfPerimeter3*(halfPerimeter3-len7)*(halfPerimeter3-len8)*(halfPerimeter3-len9));
+    //face 4
+    double len10 = sqrt((x3-x4)*(x3-x4)+(y3-y3)*(y3-y4));    //use pythagorean theorem to find length of each side
+    double len11 = sqrt((x4-x1)*(x4-x1)+(y4-y1)*(y4-y));
+    double len12 = sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
+    double halfPerimeter4 =  0.5*(len10+len11+len12);
+    double area4 = sqrt(halfPerimeter4*(halfPerimeter4-len10)*(halfPerimeter4-len11)*(halfPerimeter4-len12));
+    //final surface area
+    return area1 + area2 + area3 + area4;
 }
 //zoom this Tetrahedron
 void Tetrahedron::zoom(double times, Tetrahedron& orig) {
