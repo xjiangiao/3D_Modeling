@@ -22,7 +22,7 @@ Cone::Cone(double x0, double y0, double z0, double r,double h) : x0(x0), y0(y0),
 		if (i == size - 1) {
 			x[i] = x0;
 			y[i] = y0;
-			z[i] = h;
+			z[i] = z0 + h;
 		}
 		else {
 			x[i] = r*sin((i - 1)*rad) + x0;
@@ -114,9 +114,9 @@ void Cone::draw() const {
 double Cone::area() const {
 	return (h*h + 2 * r*r)*PI; 
 }
-//calculate the perimeter of this Cone
+//calculate the volume of this Cone
 double Cone::volume() const {
-	return (1/3) * PI * r  *r;
+	return (1.0/3.0) * PI * r  *r;
 }
 //Zoom the Cone
 void Cone::zoom(double times, Cone& orig) {
@@ -146,13 +146,12 @@ void Cone::zoom(double times, Cone& orig) {
 	}
 	orig.r = r;
 	orig.h = h*times;
-}/*
-int main() {
+}
+/*int main() {
 	Cone a(0, 0, 0, 50,100);
 	a.zoom(2, a);
 	a.draw();
 	cout << "The volume of this Cone is " << a.volume() << endl;
 	cout << "The suface area of this Cone is " << a.area() << endl;
 	return 0;
-}
-*/
+}*/
