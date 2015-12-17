@@ -65,26 +65,26 @@ void Triangle::zoom(double times, Triangle& orig){
     orig.y3 *= times;
 }
 double Triangle::perimeter() const{   //calculate perimeter of triangle
-    double len1 = sqrt(abs(x2-x1)*abs(x2-x1)+abs(y2-y1)*abs(y2-y1));    //use pythagorean theorem to find length of each side
-    double len2 = sqrt(abs(x2-x3)*abs(x2-x3)+abs(y2-y3)*abs(y2-y3));
-    double len3 = sqrt(abs(x3-x1)*abs(x3-x1)+abs(y3-y1)*abs(y3-y1));
+    double len1 = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));    //use pythagorean theorem to find length of each side
+    double len2 = sqrt((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3));
+    double len3 = sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
     return len1+len2+len3;
 }
 double Triangle::area() const{    //Use Heron's formula to calulate area
-    double len1 = sqrt(abs(x2-x1)*abs(x2-x1)+abs(y2-y1)*abs(y2-y1));    //use pythagorean theorem to find length of each side
-    double len2 = sqrt(abs(x2-x3)*abs(x2-x3)+abs(y2-y3)*abs(y2-y3));
-    double len3 = sqrt(abs(x3-x1)*abs(x3-x1)+abs(y3-y1)*abs(y3-y1));
+    double len1 = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));    //use pythagorean theorem to find length of each side
+    double len2 = sqrt((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3));
+    double len3 = sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
     double halfPerimeter =  0.5*(len1+len2+len3);
     return sqrt(halfPerimeter*(halfPerimeter-len1)*(halfPerimeter-len2)*(halfPerimeter-len3));  //Heron's formula
 }
 int main(){
-	Triangle a(0.0,0.0,0.0,10.0,0.0,0.0,0,10.0,0.0);
+	Triangle a(0.0,0.0,0.0,10.0,0.0,0.0,0.0,10.0,0.0);
 	a.rotate(90,a);
 	a.draw();
 	a.zoom(2,a);
 	a.move(10,'L', a);
 	cout << "The perimeter of this triangle is " << a.perimeter() << endl;
 	cout << "The area of this triangle is " << a.area() << endl;
-	system("pause");
+	//system("pause");
 	return 0;
 }
