@@ -146,7 +146,7 @@ void Cone::zoom(double times, Cone& orig) {
 	}
 	orig.r = r;
 	orig.h = h*times;
-}
+}/*
 int main() {
 	Cone a(0, 0, 0, 50,100);
 	a.zoom(2, a);
@@ -155,3 +155,4 @@ int main() {
 	cout << "The suface area of this Cone is " << a.area() << endl;
 	return 0;
 }
+*/
