@@ -1,9 +1,9 @@
 #ifndef CIRCLE_HH_
 #define CIRCLE_HH_
-//#include "2Dshape.hh"
+#include "Shape2D.h"
 #include <iostream>
 
-class Circle {
+class Circle : public shape2D{
 private:
 	double x0, y0, z0, r, size;
 	double* x,* y,* z;
