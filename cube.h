@@ -1,7 +1,8 @@
 #ifndef CUBE_H_
 #define CUBE_H_
+#include"Shape3D.h"
 #include <iostream>
-class cube{
+class cube:public shape3D{
 private:
 	double x0,y0,z0,w,l,h;
 	double* x, * y, * z;
