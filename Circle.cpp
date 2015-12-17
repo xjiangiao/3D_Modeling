@@ -138,6 +138,7 @@ void Circle::move(double n, char direction, Circle& orig) {
 		orig.y[0] += n;
 	}
 }
+/*
 int main() {
 	Circle a(0, 0, 0, 10);
 	a.zoom(2, a);
@@ -146,4 +147,4 @@ int main() {
 	cout << "The perimeter of this Circle is " << a.perimeter() << endl;
 	cout << "The suface area of this Circle is " << a.area() << endl;
 	return 0;
-}
+}*/
