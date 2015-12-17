@@ -134,7 +134,7 @@ double Tetrahedron::area() const{
     double area3 = sqrt(halfPerimeter3*(halfPerimeter3-len7)*(halfPerimeter3-len8)*(halfPerimeter3-len9));
     //face 4
     double len10 = sqrt((x3-x4)*(x3-x4)+(y3-y3)*(y3-y4));    //use pythagorean theorem to find length of each side
-    double len11 = sqrt((x4-x1)*(x4-x1)+(y4-y1)*(y4-y));
+    double len11 = sqrt((x4-x1)*(x4-x1)+(y4-y1)*(y4-y1));
     double len12 = sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
     double halfPerimeter4 =  0.5*(len10+len11+len12);
     double area4 = sqrt(halfPerimeter4*(halfPerimeter4-len10)*(halfPerimeter4-len11)*(halfPerimeter4-len12));
