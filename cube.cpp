@@ -173,7 +173,7 @@ void cube::zoom(double times, cube& orig) {
 	orig.w = times*w;
 	orig.l = times*l;
 	orig.h = times*h;
-}
+}/*
 int main() {
 	cube a(0, 0, 0, 10, 10, 10);
 //	a.draw();
@@ -184,4 +184,4 @@ int main() {
 	cout << "The suface area of this cube is " << a.area() << endl;
 //	system("pause");
 	return 0;
-}
+}*/
