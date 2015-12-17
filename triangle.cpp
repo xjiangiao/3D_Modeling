@@ -64,13 +64,13 @@ void Triangle::zoom(double times, Triangle& orig){
     orig.y2 *= times;
     orig.y3 *= times;
 }
-void Triangle::perimeter() const{   //calculate perimeter of triangle
+double Triangle::perimeter() const{   //calculate perimeter of triangle
     double len1 = sqrt(abs(x2-x1)*abs(x2-x1)+abs(y2-y1)*abs(y2-y1));    //use pythagorean theorem to find length of each side
     double len2 = sqrt(abs(x2-x3)*abs(x2-x3)+abs(y2-y3)*abs(y2-y3));
     double len3 = sqrt(abs(x3-x1)*abs(x3-x1)+abs(y3-y1)*abs(y3-y1));
     return len1+len2+len3;
 }
-void Triangle::area() const{    //Use Heron's formula to calulate area
+double Triangle::area() const{    //Use Heron's formula to calulate area
     double len1 = sqrt(abs(x2-x1)*abs(x2-x1)+abs(y2-y1)*abs(y2-y1));    //use pythagorean theorem to find length of each side
     double len2 = sqrt(abs(x2-x3)*abs(x2-x3)+abs(y2-y3)*abs(y2-y3));
     double len3 = sqrt(abs(x3-x1)*abs(x3-x1)+abs(y3-y1)*abs(y3-y1));
