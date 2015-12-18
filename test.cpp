@@ -6,7 +6,7 @@
 #include"cone.h"
 #include"cylinder.h"
 #include"rectangle.hh"
-#include"Sphere.h"
+//#include"Sphere.h"
 #include"Tetrahedron.h"
 #include"triangle.hh"
 using namespace std;
@@ -24,8 +24,8 @@ int main() {
 	cout << "The volume of this cylinder is " << b.volume() << endl;
 	cout << "The suface area of this cylinder is " << b.area() << endl;
 
-	Cone c(0, 0, 0, 50, 100);
-	c.zoom(2, c);
+	Cone c(0, 0, 50, 50, 100);
+//  c.zoom(2, c);
 	c.draw();
 	cout << "The volume of this Cone is " << c.volume() << endl;
 	cout << "The suface area of this Cone is " << c.area() << endl;
@@ -33,7 +33,7 @@ int main() {
 	Tetrahedron d(0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0, 10);
 //	d.zoom(2, d);
 	//	b.move(10, 'L', a);
-	//d.rotate(45, 'x', d);
+	d.rotate(45, 'x', d);
 	d.draw();
     cout << "The volume of this Tetrahedron is " << d.volume() << endl;
 	cout << "The suface area of this Tetrahedron is " << d.area() << endl;
@@ -41,13 +41,13 @@ int main() {
 	Rectangle e(0, 0, 10, 10, 0, 10, 10, 20, 10, 0, 20, 10);
 //	e.zoom(2, e);
 //	e.move(10, 'L', e);
-//	e.rotate(45, e);
+	e.rotate(45, e);
 	e.draw();
 	cout << "The perimeter of this Rectangle is " << e.perimeter() << endl;
 	cout << "The area of this Rectangle is " << e.area() << endl;
 
 	Triangle f(0, 0, 0, 50, 0, 0, 0, 30, 0);
-//	f.rotate(90, f);
+	f.rotate(45, f);
 	f.draw();
 	cout << "The perimeter of this triangle is " << f.perimeter() << endl;
 	cout << "The area of this triangle is " << f.area() << endl;
